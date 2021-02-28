@@ -14,7 +14,7 @@ public class ResultPresenter {
 
     public void operate() {
         try {
-            String str = ((Double)this.st.pop()).toString();
+            String str = this.st.pop().toString();
             System.out.println(str);
             CalculatorGui.display.setText(str);
         }

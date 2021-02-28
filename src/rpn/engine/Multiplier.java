@@ -14,7 +14,7 @@ public class Multiplier {
 
     public void operate() {
         try {
-            this.st.push((Double)this.st.pop() * (Double)this.st.pop());
+            this.st.push(this.st.pop() * this.st.pop());
         }
         catch (EmptyStackException ex) {
             CalculatorGui.display.setText("Not enough operands!");

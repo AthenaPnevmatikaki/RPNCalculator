@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class Operand {
     Stack<Double> st;
-    private StringBuffer sb = new StringBuffer();
+    private final StringBuffer sb = new StringBuffer();
 
     public Operand(Stack<Double> st) {
         this.st = st;

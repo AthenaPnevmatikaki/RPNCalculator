@@ -14,8 +14,8 @@ public class Subtractor {
 
     public void operate() {
         try {
-            Double d = (Double)this.st.pop();
-            this.st.push((Double)this.st.pop() - d);
+            Double d = this.st.pop();
+            this.st.push(this.st.pop() - d);
         }
         catch (EmptyStackException ex) {
             CalculatorGui.display.setText("Not enough operands!");

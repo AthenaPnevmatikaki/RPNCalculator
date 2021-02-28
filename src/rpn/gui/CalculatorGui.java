@@ -17,9 +17,9 @@ public class CalculatorGui extends Frame
     public static Frame window;
     public static TextField display;
 
-    private Button addButton(String name, int x, int y, int width, int height, Color color, ActionListener listener) {
+    private Button addButton(String name, int x, int y, int width, Color color, ActionListener listener) {
         Button button = new Button(name);
-        button.setBounds(x, y, width, height);
+        button.setBounds(x, y, width, 28);
         button.setFont(new Font("TimesRoman", Font.PLAIN, 14));
         button.setForeground(color);
         button.addActionListener(listener);
@@ -42,25 +42,25 @@ public class CalculatorGui extends Frame
         window.setFont(new Font("TimesRoman", Font.PLAIN, 14));
         window.setBackground(Color.blue);
 
-        addButton("0", 64, 265, 35, 28, Color.blue, new ButtonDigitHandler('0'));
-        addButton("1", 64, 232, 35, 28, Color.blue, new ButtonDigitHandler('1'));
-        addButton("2", 104, 232, 35, 28, Color.blue, new ButtonDigitHandler('2'));
-        addButton("3", 144, 232, 35, 28, Color.blue, new ButtonDigitHandler('3'));
-        addButton("4", 64, 199, 35, 28, Color.blue, new ButtonDigitHandler('4'));
-        addButton("5", 104, 199, 35, 28, Color.blue, new ButtonDigitHandler('5'));
-        addButton("6", 144, 199, 35, 28, Color.blue, new ButtonDigitHandler('6'));
-        addButton("7", 64, 166, 35, 28, Color.blue, new ButtonDigitHandler('7'));
-        addButton("8", 104, 166, 35, 28, Color.blue, new ButtonDigitHandler('8'));
-        addButton("9", 144, 166, 35, 28, Color.blue, new ButtonDigitHandler('9'));
-        addButton("ENTER", 204, 100, 56, 28, Color.white, new ButtonEnterHandler()).setBackground(Color.red);
-        addButton("BackSpace", 64, 100, 75, 28, Color.red, new ButtonBackSpaceHandler());
-        addButton("C", 144, 133, 35, 28, Color.red, new ButtonClearAllHandler());
-        addButton("CE", 144, 100, 35, 28, Color.red, new ButtonClearHandler());
-        addButton("+", 195, 265, 35, 28, Color.blue, new ButtonPlusHandler());
-        addButton("-", 195, 232, 35, 28, Color.blue, new ButtonMinusHandler());
-        addButton("*", 195, 232-33, 35, 28, Color.blue, new ButtonMultHandler());
-        addButton("/", 195, 232-66, 35, 28, Color.blue, new ButtonDivHandler());
-        addButton("=", 235, 265, 35, 28, Color.blue, new ButtonResultPresenterHandler());
+        addButton("0", 64, 265, 35, Color.blue, new ButtonDigitHandler('0'));
+        addButton("1", 64, 232, 35, Color.blue, new ButtonDigitHandler('1'));
+        addButton("2", 104, 232, 35, Color.blue, new ButtonDigitHandler('2'));
+        addButton("3", 144, 232, 35, Color.blue, new ButtonDigitHandler('3'));
+        addButton("4", 64, 199, 35, Color.blue, new ButtonDigitHandler('4'));
+        addButton("5", 104, 199, 35, Color.blue, new ButtonDigitHandler('5'));
+        addButton("6", 144, 199, 35, Color.blue, new ButtonDigitHandler('6'));
+        addButton("7", 64, 166, 35, Color.blue, new ButtonDigitHandler('7'));
+        addButton("8", 104, 166, 35, Color.blue, new ButtonDigitHandler('8'));
+        addButton("9", 144, 166, 35, Color.blue, new ButtonDigitHandler('9'));
+        addButton("ENTER", 204, 100, 56, Color.white, new ButtonEnterHandler()).setBackground(Color.red);
+        addButton("BackSpace", 64, 100, 75, Color.red, new ButtonBackSpaceHandler());
+        addButton("C", 144, 133, 35, Color.red, new ButtonClearAllHandler());
+        addButton("CE", 144, 100, 35, Color.red, new ButtonClearHandler());
+        addButton("+", 195, 265, 35, Color.blue, new ButtonPlusHandler());
+        addButton("-", 195, 232, 35, Color.blue, new ButtonMinusHandler());
+        addButton("*", 195, 232-33, 35, Color.blue, new ButtonMultHandler());
+        addButton("/", 195, 232-66, 35, Color.blue, new ButtonDivHandler());
+        addButton("=", 235, 265, 35, Color.blue, new ButtonResultPresenterHandler());
 
         //D  I  S  P  L  A  Y     S  E  T  T  I  N  G  S
         display = new TextField("0");
@@ -90,7 +90,7 @@ class CloseWindowAndExit extends WindowAdapter
 
 
 class ButtonDigitHandler implements ActionListener {
-    private char digit;
+    private final char digit;
 
     public ButtonDigitHandler(char digit) {
         this.digit = digit;
